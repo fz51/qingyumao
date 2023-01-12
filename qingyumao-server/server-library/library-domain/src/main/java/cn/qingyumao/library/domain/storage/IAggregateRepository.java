@@ -1,6 +1,7 @@
 package cn.qingyumao.library.domain.storage;
 
 import cn.qingyumao.library.domain.AggregateRoot;
+import cn.qingyumao.library.domain.Id;
 
 import java.util.Optional;
 
@@ -11,7 +12,7 @@ import java.util.Optional;
  *
  * @author fz51
  */
-public interface IAggregateRepository <AR extends AggregateRoot<ID>, ID> {
+public interface IAggregateRepository<AR extends AggregateRoot<ID>, ID extends Id> {
 
     /**
      * 加载聚合

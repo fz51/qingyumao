@@ -1,5 +1,7 @@
 package cn.qingyumao.library.execution;
 
+import cn.qingyumao.library.domain.Id;
+
 import java.util.Optional;
 
 /**
@@ -26,7 +28,7 @@ public class BaseCommand<R> {
      *
      * @return
      */
-    public Optional<?> getUUId() {
+    public Optional<Id> getUUId() {
         return Optional.empty();
     }
 

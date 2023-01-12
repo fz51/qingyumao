@@ -19,7 +19,7 @@ public class IdGeneratorManager {
      */
     private static Map<Class<?>, IdGenerator> ID_GENERATOR_MAP;
 
-    private static IdGenerator<StringId> DEFAULT_STRING_ID_GENERATOR = new DefaultStringIdGenerator();
+    private static IdGenerator<StrId> DEFAULT_STRING_ID_GENERATOR = new DefaultStringIdGenerator();
 
     private static IdGenerator<LongId> DEFAULT_LONG_ID_GENERATOR = new DefaultLongIdGenerator();
 
@@ -44,7 +44,7 @@ public class IdGeneratorManager {
             ID_GENERATOR_MAP.put(idClazz, generator);
         } else {
             // 设置默认id 生成器
-            if (StringId.class.isAssignableFrom(idClazz)) {
+            if (StrId.class.isAssignableFrom(idClazz)) {
                 ID_GENERATOR_MAP.put(idClazz, DEFAULT_STRING_ID_GENERATOR);
             } else if (LongId.class.isAssignableFrom(idClazz)) {
                 ID_GENERATOR_MAP.put(idClazz, DEFAULT_LONG_ID_GENERATOR);
@@ -57,10 +57,10 @@ public class IdGeneratorManager {
         return (ID) ID_GENERATOR_MAP.get(idClazz).generate();
     }
 
-    static class DefaultStringIdGenerator implements IdGenerator<StringId> {
+    static class DefaultStringIdGenerator implements IdGenerator<StrId> {
         @Override
-        public StringId generate() {
-            return new StringId(UUID.randomUUID().toString());
+        public StrId generate() {
+            return new StrId(UUID.randomUUID().toString());
         }
     }
 

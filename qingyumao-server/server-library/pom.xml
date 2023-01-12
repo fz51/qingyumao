@@ -17,6 +17,7 @@
         <module>library-extension</module>
         <module>library-execution</module>
         <module>library-event</module>
+        <module>library-security</module>
     </modules>
     <properties>
         <maven.compiler.source>17</maven.compiler.source>

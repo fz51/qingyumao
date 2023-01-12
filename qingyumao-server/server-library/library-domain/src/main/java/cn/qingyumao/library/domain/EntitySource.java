@@ -11,6 +11,6 @@ public enum EntitySource {
     /**
      * 命令创建
      */
-    CMD_CREATE,
+    ORIGIN,
     ;
 }

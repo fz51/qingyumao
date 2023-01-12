@@ -12,6 +12,7 @@
         <module>domain-ids</module>
         <module>domain-user</module>
     </modules>
+
     <artifactId>server-domains</artifactId>
     <packaging>pom</packaging>
     <description>领域模块</description>

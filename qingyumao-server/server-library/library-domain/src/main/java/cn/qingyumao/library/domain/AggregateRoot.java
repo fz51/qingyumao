@@ -5,7 +5,6 @@ import cn.hutool.core.util.ObjectUtil;
 import cn.qingyumao.library.domain.event.DomainEvent;
 import lombok.Getter;
 
-import javax.xml.transform.Source;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,14 +16,14 @@ import java.util.Optional;
  * @param <ID>
  * @author fz51
  */
-public abstract class AggregateRoot<ID> implements Serializable {
+public abstract class AggregateRoot<ID extends Id> implements Serializable {
 
     private final ID id;
     /**
      * 聚合来源
      */
     @Getter
-    private final Source source;
+    private final EntitySource source;
 
     /**
      * 删除状态状态
@@ -42,7 +41,7 @@ public abstract class AggregateRoot<ID> implements Serializable {
      */
     private transient List<AggregateRoot> snapshots = new ArrayList<>();
 
-    public AggregateRoot(ID id, Source source) {
+    public AggregateRoot(ID id, EntitySource source) {
         if (id == null) {
             throw new IllegalStateException("aggregate Root id must not null");
         }
