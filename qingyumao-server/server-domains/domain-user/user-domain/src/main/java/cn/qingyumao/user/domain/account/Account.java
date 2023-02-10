@@ -4,9 +4,10 @@ import cn.qingyumao.domain.ids.user.AccountId;
 import cn.qingyumao.library.domain.AggregateRoot;
 import cn.qingyumao.library.domain.EntitySource;
 import cn.qingyumao.library.domain.IdGeneratorManager;
-import cn.qingyumao.library.domain.event.EventCreator;
 import cn.qingyumao.library.domain.types.MobileNumber;
+import cn.qingyumao.library.event.core.EventCreator;
 import cn.qingyumao.user.client.account.events.AccountContactMobileChangedEvent;
+import cn.qingyumao.user.client.account.events.AccountRegisteredEvent;
 import cn.qingyumao.user.domain.account.model.AccountDescription;
 import cn.qingyumao.user.domain.account.model.AccountUniqueCode;
 import lombok.Getter;
@@ -50,23 +51,17 @@ public class Account extends AggregateRoot<AccountId> {
         this.uniqueCode = uniqueCode;
     }
 
-    public static Account create(AccountUniqueCode uniqueCode,
-                                 MobileNumber contactMobile,
-                                 Boolean enabled,
-                                 AccountDescription description) {
+    public static Account create(AccountUniqueCode uniqueCode, MobileNumber contactMobile, Boolean enabled, AccountDescription description) {
         Account account = new Account(IdGeneratorManager.generate(AccountId.class), EntitySource.ORIGIN, uniqueCode);
         account.contactMobile = contactMobile;
         account.description = description;
         account.enabled = enabled;
         account.setDataVersion(0);
+        account.addEvent(new AccountRegisteredEvent(account.getId(), uniqueCode.getValue(), account.getContactMobile(), new EventCreator("None")));
         return account;
     }
 
-    public static Account load(AccountId id, Integer version,
-                               AccountUniqueCode uniqueCode, MobileNumber contactMobile,
-                               Boolean enabled,
-                               AccountDescription description
-    ) {
+    public static Account load(AccountId id, Integer version, AccountUniqueCode uniqueCode, MobileNumber contactMobile, Boolean enabled, AccountDescription description) {
         Account account = new Account(id, EntitySource.REPOSITORY_LOAD, uniqueCode);
         account.contactMobile = contactMobile;
         account.description = description;
@@ -105,4 +100,6 @@ public class Account extends AggregateRoot<AccountId> {
     public void disable() {
         this.enabled = false;
     }
+
+
 }

@@ -12,7 +12,7 @@ import java.util.Optional;
  *
  * @author fz51
  */
-public interface IAggregateRepository<AR extends AggregateRoot<ID>, ID extends Id> {
+public interface IAggregateRepository<AR extends AggregateRoot, ID extends Id> {
 
     /**
      * 加载聚合

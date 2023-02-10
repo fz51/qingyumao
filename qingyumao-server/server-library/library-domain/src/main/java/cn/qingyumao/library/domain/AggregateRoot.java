@@ -2,7 +2,7 @@ package cn.qingyumao.library.domain;
 
 
 import cn.hutool.core.util.ObjectUtil;
-import cn.qingyumao.library.domain.event.DomainEvent;
+import cn.qingyumao.library.event.core.AbsDomainEvent;
 import lombok.Getter;
 
 import java.io.Serializable;
@@ -34,7 +34,8 @@ public abstract class AggregateRoot<ID extends Id> implements Serializable {
     /**
      *
      */
-    private transient List<DomainEvent> events = new ArrayList<>();
+    private transient List<AbsDomainEvent> events = new ArrayList<>();
+
 
     /**
      * 快照
@@ -71,11 +72,11 @@ public abstract class AggregateRoot<ID extends Id> implements Serializable {
      *
      * @param event
      */
-    public void addEvent(DomainEvent event) {
+    public void addEvent(AbsDomainEvent event) {
         this.events.add(event);
     }
 
-    public List<DomainEvent> getEvents() {
+    public List<AbsDomainEvent> getEvents() {
         return this.events;
     }
 
@@ -103,5 +104,7 @@ public abstract class AggregateRoot<ID extends Id> implements Serializable {
     public void commitSnapshot() {
         snapshots.add(ObjectUtil.clone(this));
     }
+
+
 
 }

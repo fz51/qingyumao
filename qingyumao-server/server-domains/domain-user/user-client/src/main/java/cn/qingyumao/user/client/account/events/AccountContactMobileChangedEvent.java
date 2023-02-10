@@ -1,17 +1,17 @@
 package cn.qingyumao.user.client.account.events;
 
 import cn.qingyumao.domain.ids.user.AccountId;
-import cn.qingyumao.library.domain.event.DomainEvent;
-import cn.qingyumao.library.domain.event.EventCreator;
 import cn.qingyumao.library.domain.types.MobileNumber;
-import cn.qingyumao.library.event.EventSource;
+import cn.qingyumao.library.event.core.AbsDomainEvent;
+import cn.qingyumao.library.event.core.EventCreator;
+import cn.qingyumao.library.event.core.EventSource;
 import lombok.Getter;
 
-public class AccountContactMobileChangedEvent extends DomainEvent<AccountContactMobileChangedEvent.Source> {
+public class AccountContactMobileChangedEvent extends AbsDomainEvent<AccountContactMobileChangedEvent.Source> {
 
     public AccountContactMobileChangedEvent(AccountId accountId, MobileNumber oldContactMobile, MobileNumber newContactMobile
-    ,EventCreator creator) {
-        super(new Source(accountId, newContactMobile, oldContactMobile),creator);
+            , EventCreator creator) {
+        super(new Source(accountId, newContactMobile, oldContactMobile), creator);
     }
 
 

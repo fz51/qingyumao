@@ -15,6 +15,8 @@
         <module>user-client</module>
         <module>user-domain</module>
         <module>user-infrastructure</module>
+        <module>user-spring-boot-starter</module>
+        <module>user-spring-boot-autoconfigure</module>
     </modules>
 
     <properties>

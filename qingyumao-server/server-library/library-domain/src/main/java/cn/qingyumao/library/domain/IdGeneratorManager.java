@@ -1,11 +1,13 @@
 package cn.qingyumao.library.domain;
 
 import cn.hutool.core.util.IdUtil;
+import cn.hutool.core.util.ReflectUtil;
 import cn.qingyumao.library.extension.BeanContainerHolder;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 import java.util.UUID;
 
 /**
@@ -18,10 +20,6 @@ public class IdGeneratorManager {
      * 收集ID生成器
      */
     private static Map<Class<?>, IdGenerator> ID_GENERATOR_MAP;
-
-    private static IdGenerator<StrId> DEFAULT_STRING_ID_GENERATOR = new DefaultStringIdGenerator();
-
-    private static IdGenerator<LongId> DEFAULT_LONG_ID_GENERATOR = new DefaultLongIdGenerator();
 
     static {
         init();
@@ -39,15 +37,15 @@ public class IdGeneratorManager {
             return generator.generate();
         }
         // 尝试从容器中获取
-        generator = BeanContainerHolder.get().getAdaptiveBean(IdGenerator.class, idClazz);
-        if (generator != null) {
-            ID_GENERATOR_MAP.put(idClazz, generator);
+        final Optional<IdGenerator> generatorOptional = BeanContainerHolder.get().getAdaptiveBean(IdGenerator.class, idClazz);
+        if (generatorOptional.isPresent()) {
+            ID_GENERATOR_MAP.put(idClazz, generatorOptional.get());
         } else {
             // 设置默认id 生成器
             if (StrId.class.isAssignableFrom(idClazz)) {
-                ID_GENERATOR_MAP.put(idClazz, DEFAULT_STRING_ID_GENERATOR);
+                ID_GENERATOR_MAP.put(idClazz, new DefaultStringIdGenerator(idClazz));
             } else if (LongId.class.isAssignableFrom(idClazz)) {
-                ID_GENERATOR_MAP.put(idClazz, DEFAULT_LONG_ID_GENERATOR);
+                ID_GENERATOR_MAP.put(idClazz, new DefaultLongIdGenerator(idClazz));
             }
         }
         if (ID_GENERATOR_MAP.get(idClazz) == null) {
@@ -57,17 +55,33 @@ public class IdGeneratorManager {
         return (ID) ID_GENERATOR_MAP.get(idClazz).generate();
     }
 
-    static class DefaultStringIdGenerator implements IdGenerator<StrId> {
+    static class DefaultStringIdGenerator<T> implements IdGenerator {
+
+        private Class clazz;
+
+        public DefaultStringIdGenerator(Class clazz) {
+            this.clazz = clazz;
+        }
+
         @Override
-        public StrId generate() {
-            return new StrId(UUID.randomUUID().toString());
+        public T generate() {
+            final T t = (T) ReflectUtil.newInstance(clazz, UUID.randomUUID().toString());
+            return t;
         }
     }
 
-    static class DefaultLongIdGenerator implements IdGenerator<LongId> {
+    static class DefaultLongIdGenerator<T> implements IdGenerator {
+
+        private Class clazz;
+
+        public DefaultLongIdGenerator(Class clazz) {
+            this.clazz = clazz;
+        }
+
         @Override
-        public LongId generate() {
-            return new LongId(IdUtil.getSnowflake().nextId());
+        public T generate() {
+            final T t = (T) ReflectUtil.newInstance(clazz, IdUtil.getSnowflake().nextId());
+            return t;
         }
     }
 }

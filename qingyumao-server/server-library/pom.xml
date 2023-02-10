@@ -18,6 +18,12 @@
         <module>library-execution</module>
         <module>library-event</module>
         <module>library-security</module>
+        <module>library-lock</module>
+        <module>library-util</module>
+        <module>library-web</module>
+        <module>library-storage</module>
+
+
     </modules>
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
