@@ -54,9 +54,15 @@
         </dependency>
 
         <!-- 领域模块-->
-        <dependency>
+        <!--<dependency>
             <groupId>cn.qingyumao</groupId>
             <artifactId>user-spring-boot-starter</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>-->
+
+        <dependency>
+            <groupId>cn.qingyumao.scaffold</groupId>
+            <artifactId>scaffold-ddd-spring-boot-starter</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 

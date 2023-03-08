@@ -11,6 +11,8 @@
         <module>server-starter</module>
         <module>server-domains</module>
         <module>server-library</module>
+        <module>modules</module>
+        <module>scaffold</module>
 
     </modules>
     <packaging>pom</packaging>

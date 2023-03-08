@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/linux/flutter/ephemeral/.plugin_symlinks/url_launcher_linux/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/linux/flutter/ephemeral/.plugin_symlinks/url_launcher_linux/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/linux/flutter/ephemeral/.plugin_symlinks/url_launcher_linux/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/macos/Flutter/ephemeral/.symlinks/plugins/url_launcher_macos/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/macos/Flutter/ephemeral/.symlinks/plugins/url_launcher_macos/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/macos/Flutter/ephemeral/.symlinks/plugins/url_launcher_macos/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/windows/flutter/ephemeral/.plugin_symlinks/url_launcher_windows/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/windows/flutter/ephemeral/.plugin_symlinks/url_launcher_windows/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/windows/flutter/ephemeral/.plugin_symlinks/url_launcher_windows/build" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/windows/flutter/ephemeral/.plugin_symlinks/device_info_plus/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/windows/flutter/ephemeral/.plugin_symlinks/device_info_plus/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/windows/flutter/ephemeral/.plugin_symlinks/device_info_plus/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/linux/flutter/ephemeral/.plugin_symlinks/flutter_keyboard_visibility_linux/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/linux/flutter/ephemeral/.plugin_symlinks/flutter_keyboard_visibility_linux/build" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/linux/flutter/ephemeral/.plugin_symlinks/flutter_keyboard_visibility_linux/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/windows/flutter/ephemeral/.plugin_symlinks/url_launcher_windows/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/windows/flutter/ephemeral/.plugin_symlinks/url_launcher_windows/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/windows/flutter/ephemeral/.plugin_symlinks/url_launcher_windows/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/linux/flutter/ephemeral/.plugin_symlinks/device_info_plus/build" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/linux/flutter/ephemeral/.plugin_symlinks/device_info_plus/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/linux/flutter/ephemeral/.plugin_symlinks/device_info_plus/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/build" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/linux/flutter/ephemeral/.plugin_symlinks/device_info_plus/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/linux/flutter/ephemeral/.plugin_symlinks/device_info_plus/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/linux/flutter/ephemeral/.plugin_symlinks/device_info_plus/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/linux/flutter/ephemeral/.plugin_symlinks/url_launcher_linux/build" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/linux/flutter/ephemeral/.plugin_symlinks/url_launcher_linux/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/linux/flutter/ephemeral/.plugin_symlinks/url_launcher_linux/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/macos/Flutter/ephemeral/.symlinks/plugins/device_info_plus/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/macos/Flutter/ephemeral/.symlinks/plugins/device_info_plus/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/macos/Flutter/ephemeral/.symlinks/plugins/device_info_plus/build" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/windows/flutter/ephemeral/.plugin_symlinks/device_info_plus/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/windows/flutter/ephemeral/.plugin_symlinks/device_info_plus/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/windows/flutter/ephemeral/.plugin_symlinks/device_info_plus/build" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/windows/flutter/ephemeral/.plugin_symlinks/flutter_keyboard_visibility_windows/build" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/windows/flutter/ephemeral/.plugin_symlinks/flutter_keyboard_visibility_windows/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/windows/flutter/ephemeral/.plugin_symlinks/flutter_keyboard_visibility_windows/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/windows/flutter/ephemeral/.plugin_symlinks/pasteboard/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/windows/flutter/ephemeral/.plugin_symlinks/pasteboard/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/windows/flutter/ephemeral/.plugin_symlinks/pasteboard/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/linux/flutter/ephemeral/.plugin_symlinks/pasteboard/build" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/linux/flutter/ephemeral/.plugin_symlinks/pasteboard/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/linux/flutter/ephemeral/.plugin_symlinks/pasteboard/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/linux/flutter/ephemeral/.plugin_symlinks/pasteboard/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/linux/flutter/ephemeral/.plugin_symlinks/pasteboard/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/linux/flutter/ephemeral/.plugin_symlinks/pasteboard/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/macos/Flutter/ephemeral/.symlinks/plugins/pasteboard/build" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/macos/Flutter/ephemeral/.symlinks/plugins/pasteboard/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/macos/Flutter/ephemeral/.symlinks/plugins/pasteboard/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/macos/Flutter/ephemeral/.symlinks/plugins/pasteboard/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/macos/Flutter/ephemeral/.symlinks/plugins/pasteboard/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/macos/Flutter/ephemeral/.symlinks/plugins/pasteboard/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/macos/Flutter/ephemeral/.symlinks/plugins/device_info_plus/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/macos/Flutter/ephemeral/.symlinks/plugins/device_info_plus/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/macos/Flutter/ephemeral/.symlinks/plugins/device_info_plus/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/macos/Flutter/ephemeral/.symlinks/plugins/url_launcher_macos/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/macos/Flutter/ephemeral/.symlinks/plugins/url_launcher_macos/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/macos/Flutter/ephemeral/.symlinks/plugins/url_launcher_macos/build" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/windows/flutter/ephemeral/.plugin_symlinks/pasteboard/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/windows/flutter/ephemeral/.plugin_symlinks/pasteboard/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/client/qingyumao_app/windows/flutter/ephemeral/.plugin_symlinks/pasteboard/build" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
