@@ -40,7 +40,7 @@ public abstract class AbstractDomainEvent extends EventObject {
     private EventStatus status;
 
     public AbstractDomainEvent(String traceId, EventCreator creator) {
-        super(null);
+        super("null");
         this.traceId = traceId;
         this.creator = creator;
         this.status = EventStatus.CREATED;

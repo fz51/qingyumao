@@ -16,7 +16,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
  * 针对 controller 返回值统一响应格式
  */
 @Slf4j
-@RestControllerAdvice(basePackages = "cn.qingyumao.**.controller.**")
+@RestControllerAdvice(basePackages = "cn.qingyumao")
 public class ControllerResponseAdvice implements ResponseBodyAdvice<Object> {
 
     private ObjectMapper objectMapper;

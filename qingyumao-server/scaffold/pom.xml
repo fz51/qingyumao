@@ -16,13 +16,12 @@
     <modules>
         <module>scaffold-common</module>
         <module>scaffold-lock</module>
-        <module>scaffold-data</module>
-        <module>scaffold-common</module>
         <module>scaffold-ddd</module>
         <module>scaffold-ddd-spring-boot-starter</module>
         <module>scaffold-web</module>
         <module>scaffold-security</module>
         <module>scaffold-web-spring-boot-starter</module>
+        <module>scaffold-repository</module>
     </modules>
 
     <properties>

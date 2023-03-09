@@ -1,6 +1,7 @@
 package cn.qingyumao.scaffold.execution;
 
 import cn.hutool.core.util.ReflectUtil;
+import cn.qingyumao.scaffold.domain.AggregateRoot;
 import cn.qingyumao.scaffold.domain.event.EventDistributor;
 import cn.qingyumao.scaffold.repository.AggregateLoader;
 import cn.qingyumao.scaffold.repository.AggregateRepository;
@@ -24,7 +25,7 @@ public class DefaultCmdExecutorFactory implements BeanFactoryPostProcessor {
     @Nullable
     private ConfigurableListableBeanFactory beanFactory;
 
-    public DefaultCmdExecutor createCmdExecutor(Class<?> cmdClazz, Class<?> aggregateRootClazz) {
+    public DefaultCmdExecutor createCmdExecutor(Class<?> cmdClazz, Class<? extends AggregateRoot<?>> aggregateRootClazz) {
         final DefaultCmdExecutor defaultCmdExecutor = new DefaultCmdExecutor(cmdClazz, aggregateRootClazz);
 
         defaultCmdExecutor.setAggregateLoader(matchAggregateLoader(cmdClazz, aggregateRootClazz));
@@ -77,7 +78,7 @@ public class DefaultCmdExecutorFactory implements BeanFactoryPostProcessor {
         return null;
     }
 
-    private Map<Class<?>, AggregateLoader> matchAggregateLoader(Class<?> cmdClazz, Class<?> aggregateRootClazz) {
+    private Map<Class<?>, AggregateLoader<?, ?>> matchAggregateLoader(Class<?> cmdClazz, Class<?> aggregateRootClazz) {
         return null;
     }
 

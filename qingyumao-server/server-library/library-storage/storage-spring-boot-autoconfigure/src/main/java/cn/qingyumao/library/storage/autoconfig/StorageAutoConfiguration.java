@@ -21,10 +21,7 @@ public class StorageAutoConfiguration {
         @Override
         public Optional<String> getCurrentAuditor() {
             final Optional<AuthUsr> authUsr = AuthContext.getAuthUsr();
-            if (authUsr.isPresent()) {
-                return Optional.of(authUsr.get().getId().externalId());
-            }
-            return Optional.of("Nameless");
+            return authUsr.map(usr -> usr.getId().externalId()).or(() -> Optional.of("Nameless"));
         }
     }
 

@@ -1,6 +1,6 @@
 package cn.qingyumao.scaffold.ddd.autoconfig;
 
-import cn.qingyumao.scaffold.domain.event.DefaultEventDistributor;
+import cn.qingyumao.scaffold.domain.event.LocalEventDistributor;
 import cn.qingyumao.scaffold.domain.event.EventDistributor;
 import cn.qingyumao.scaffold.execution.CmdDispatcher;
 import cn.qingyumao.scaffold.execution.CmdExecutorFactory;
@@ -35,6 +35,6 @@ public class DddAutoConfiguration {
     @ConditionalOnMissingBean(EventDistributor.class)
     @Bean
     public EventDistributor eventDistributor() {
-        return new DefaultEventDistributor();
+        return new LocalEventDistributor();
     }
 }

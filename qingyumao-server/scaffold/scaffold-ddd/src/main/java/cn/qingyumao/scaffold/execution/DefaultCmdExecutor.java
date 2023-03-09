@@ -6,6 +6,7 @@ import cn.qingyumao.scaffold.domain.event.EventDistributor;
 import cn.qingyumao.scaffold.execution.annation.LoadVoucher;
 import cn.qingyumao.scaffold.repository.AggregateLoader;
 import cn.qingyumao.scaffold.repository.AggregateRepository;
+import lombok.Getter;
 import org.springframework.util.CollectionUtils;
 
 import java.lang.reflect.Field;
@@ -16,12 +17,13 @@ import java.util.stream.Collectors;
 
 public class DefaultCmdExecutor implements CmdExecutor<Object> {
 
-
+    @Getter
     private final Class<?> cmdClazz;
+    @Getter
     private final Class<? extends AggregateRoot<?>> aggregateRootClazz;
 
 
-    private Map<Class<?>, AggregateLoader> aggregateLoader;
+    private Map<Class<?>, AggregateLoader<?, ?>> aggregateLoader;
 
     private AggregateGenerator aggregateRootGenerator;
 
@@ -35,7 +37,7 @@ public class DefaultCmdExecutor implements CmdExecutor<Object> {
 
     private EventDistributor distributor;
 
-    public DefaultCmdExecutor(Class cmdClazz, Class aggregateRootClazz) {
+    public DefaultCmdExecutor(Class<?> cmdClazz, Class<? extends AggregateRoot<?>> aggregateRootClazz) {
         this.cmdClazz = cmdClazz;
         this.aggregateRootClazz = aggregateRootClazz;
     }
@@ -69,7 +71,7 @@ public class DefaultCmdExecutor implements CmdExecutor<Object> {
 
         aggregateRepository.save(ar);
 
-        distributor.distribute(ar.getEvents());
+        // distributor.distribute(ar.getEvents());
     }
 
     protected void executing(Object cmd, AggregateRoot ar) {
@@ -165,7 +167,7 @@ public class DefaultCmdExecutor implements CmdExecutor<Object> {
         this.aggregateRootGenerator = aggregateRootGenerator;
     }
 
-    public void setAggregateLoader(Map<Class<?>, AggregateLoader> aggregateLoader) {
+    public void setAggregateLoader(Map<Class<?>, AggregateLoader<?, ?>> aggregateLoader) {
         this.aggregateLoader = aggregateLoader;
     }
 }

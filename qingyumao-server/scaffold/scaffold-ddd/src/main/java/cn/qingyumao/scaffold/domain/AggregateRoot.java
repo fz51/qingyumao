@@ -2,7 +2,6 @@ package cn.qingyumao.scaffold.domain;
 
 
 import cn.hutool.core.util.ObjectUtil;
-import cn.qingyumao.scaffold.domain.event.AbstractDomainEvent;
 import lombok.Getter;
 
 import java.io.Serializable;
@@ -32,12 +31,6 @@ public abstract class AggregateRoot<ID extends Id> implements Serializable {
 
 
     /**
-     *
-     */
-    private transient List<AbstractDomainEvent> events = new ArrayList<>();
-
-
-    /**
      * 快照
      */
     private transient List<AggregateRoot> snapshots = new ArrayList<>();
@@ -63,21 +56,6 @@ public abstract class AggregateRoot<ID extends Id> implements Serializable {
 
     public boolean isDeleted() {
         return this.deleted;
-    }
-
-
-    /**
-     * 添加领域事件。<br/>
-     * 再一次命令触发过程中，不能发生相同的事件。如果需要重复发生事件。请自定义事件的次数
-     *
-     * @param event
-     */
-    public void addEvent(AbstractDomainEvent event) {
-        this.events.add(event);
-    }
-
-    public List<AbstractDomainEvent> getEvents() {
-        return this.events;
     }
 
 

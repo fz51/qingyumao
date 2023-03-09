@@ -23,8 +23,8 @@ import java.util.stream.Collectors;
 @RestControllerAdvice
 public class ControllerExceptionAdvice {
 
-    @Autowired
-    MessageSource messageSource;
+
+    private MessageSource messageSource;
 
 
    /* @ExceptionHandler(Exception.class)
@@ -86,4 +86,8 @@ public class ControllerExceptionAdvice {
         return result;
     }
 
+    @Autowired
+    public void setMessageSource(MessageSource messageSource) {
+        this.messageSource = messageSource;
+    }
 }
