@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "qingyumao_app" "\0"
+            VALUE "CompanyName", "cn.qingyumao" "\0"
+            VALUE "FileDescription", "client_app" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "qingyumao_app" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2023 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "qingyumao_app.exe" "\0"
-            VALUE "ProductName", "qingyumao_app" "\0"
+            VALUE "InternalName", "client_app" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2023 cn.qingyumao. All rights reserved." "\0"
+            VALUE "OriginalFilename", "client_app.exe" "\0"
+            VALUE "ProductName", "client_app" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

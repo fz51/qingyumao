@@ -2,9 +2,9 @@ package cn.qingyumao.doc.book.adapter.web;
 
 
 import cn.qingyumao.doc.book.app.CreateBookCmd;
-import cn.qingyumao.scaffold.execution.CmdDispatcher;
+import cn.qingyumao.doc.book.domain.BookName;
+import cn.qingyumao.scaffold.web.CommonController;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,14 +12,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/doc/book")
 @Slf4j
-public class BookController {
-
-    @Autowired
-    private CmdDispatcher cmdDispatcher;
-
+public class BookController extends CommonController {
+    /**
+     * 创建文档
+     *
+     * @return 文档id
+     */
     @PostMapping("/create")
-    public void createBook() {
-        log.info("创建文档");
-        cmdDispatcher.dispatch(new CreateBookCmd("测试"));
+    public Long createBook() {
+        final CreateBookCmd cmd = new CreateBookCmd(new BookName("测试"));
+        handleCmd(cmd);
+        return cmd.getResult().getVal();
     }
 }

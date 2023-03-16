@@ -1,6 +1,6 @@
 {
-    "name": "qingyumao_app",
-    "short_name": "qingyumao_app",
+    "name": "client_app",
+    "short_name": "client_app",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

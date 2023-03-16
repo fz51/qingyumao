@@ -39,24 +39,25 @@ public class ControllerExceptionAdvice {
 
     @ExceptionHandler(HttpMessageNotReadableException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public WebResp<Object> handNotParamException(HttpMessageNotReadableException e) {
+    public WebResp<?> handNotParamException(HttpMessageNotReadableException e) {
         e.printStackTrace();
         // log.error(e.getMessage());
         log.error(ExceptionUtil.getRootCauseMessage(e));
         // 参数缺失错误
         String msgCode = "exception_msg.request_param_missing";
-        WebResp<Object> result = WebResp.buildFailure(msgCode, messageSource.getMessage(msgCode, null, LocaleContextHolder.getLocale()));
+        WebResp result = WebResp.buildFailure(msgCode,
+                messageSource.getMessage(msgCode, null, LocaleContextHolder.getLocale()), 1);
         result.setErrorShowType(1);
         return result;
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public WebResp<Object> handNotParamException(MethodArgumentNotValidException e) {
+    public WebResp<?> handNotParamException(MethodArgumentNotValidException e) {
         log.error(e.getMessage());
         // 参数验证错误 validate
         List<String> errors = e.getBindingResult().getAllErrors().stream().map(ObjectError::getDefaultMessage).collect(Collectors.toList());
-        WebResp result = WebResp.buildFailure("PARAM_VALIDATE_ERROR", String.join(",", errors));
+        WebResp result = WebResp.buildFailure("PARAM_VALIDATE_ERROR", String.join(",", errors), 1);
         result.setDebugMessage("参数异常：" + e.getMessage());
         result.setErrorShowType(1);
         return result;
@@ -64,10 +65,10 @@ public class ControllerExceptionAdvice {
 
     @ExceptionHandler(IllegalArgumentException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public WebResp<Object> handIllegalArgumentException(IllegalArgumentException e) {
+    public WebResp<?> handIllegalArgumentException(IllegalArgumentException e) {
         e.printStackTrace();
         // 参数验证错误 validate
-        WebResp result = WebResp.buildFailure("PARAM_VALIDATE_ERROR", e.getMessage());
+        WebResp result = WebResp.buildFailure("PARAM_VALIDATE_ERROR", e.getMessage(), 1);
         result.setDebugMessage("参数异常：" + e.getMessage());
         result.setErrorShowType(1);
         return result;
@@ -76,13 +77,13 @@ public class ControllerExceptionAdvice {
 
     @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    public WebResp<Object> handleGlobalException(Exception e) {
+    public WebResp<?> handleGlobalException(Exception e) {
         e.printStackTrace();
         if (e instanceof HttpMessageNotReadableException) {
-            WebResp result = WebResp.buildFailure("PARAM_ERROR", e.getMessage());
+            WebResp result = WebResp.buildFailure("PARAM_ERROR", e.getMessage(), 1);
             return result;
         }
-        WebResp result = WebResp.buildFailure("UNKNOWN_ERROR", "未知错误");
+        WebResp result = WebResp.buildFailure("UNKNOWN_ERROR", "未知错误", 1);
         return result;
     }
 

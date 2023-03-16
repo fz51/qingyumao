@@ -63,6 +63,20 @@ public class ResultWrapper<T> implements Serializable {
         this.errorMessage = errMessage;
     }
 
+    public static ResultWrapper<?> buildFailure(String errCode, String errMessage) {
+        ResultWrapper<?> response = new ResultWrapper(null);
+        response.setSuccess(false);
+        response.setErrorCode(errCode);
+        response.setErrorMessage(errMessage);
+        return response;
+    }
+
+    public static <T> ResultWrapper<T> buildSuccess(T data) {
+        ResultWrapper<T> response = new ResultWrapper<>(data);
+        response.setSuccess(true);
+        response.setData(data);
+        return response;
+    }
     @Override
     public String toString() {
         return "ResultWrapper [success=" + this.success + ", errorCode=" + this.errorCode + ", errorMessage=" + this.errorMessage + "]";

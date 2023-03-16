@@ -47,18 +47,20 @@ public class WebResp<T> extends ResultWrapper {
         return this;
     }
 
-    public static WebResp buildFailure(String errCode, String errMessage) {
+    public static WebResp<?> buildFailure(String errCode, String errMessage, int errorShowType) {
         WebResp response = new WebResp(null);
         response.setSuccess(false);
         response.setErrorCode(errCode);
         response.setErrorMessage(errMessage);
+        response.setErrorShowType(errorShowType);
         return response;
     }
 
-    public static <T> WebResp buildSuccess(T data) {
+    public static <T> WebResp<T> buildSuccess(T data, int errorShowType) {
         WebResp<T> response = new WebResp<>(data);
         response.setSuccess(true);
         response.setData(data);
+        response.setErrorShowType(errorShowType);
         return response;
     }
 
