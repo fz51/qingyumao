@@ -5,6 +5,7 @@ import java.lang.annotation.*;
 @Target({ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
+@BusinessId
 public @interface EntityId {
 
 }

@@ -12,5 +12,5 @@ public class JaversBuilderPluginBook implements JaversBuilderPlugin {
     public void beforeAssemble(JaversBuilder javersBuilder) {
         javersBuilder.registerType(new EntityDefinition(Book.class, "id"));
     }
-    
+
 }

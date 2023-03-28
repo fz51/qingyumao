@@ -16,7 +16,6 @@
         <module>doc-server-spring-boot-starter</module>
         <module>im-client</module>
         <module>im-server</module>
-        <module>user-server</module>
 
 
     </modules>
