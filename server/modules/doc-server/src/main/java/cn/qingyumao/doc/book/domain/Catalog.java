@@ -2,7 +2,7 @@ package cn.qingyumao.doc.book.domain;
 
 import cn.hutool.core.collection.CollUtil;
 import cn.qingyumao.scaffold.common.exception.DataNonExistentException;
-import cn.qingyumao.scaffold.domain.IDGeneratorManager;
+import cn.qingyumao.scaffold.ddd.domain.IDGeneratorHolder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,7 +48,7 @@ public class Catalog {
     }
 
     public Catalog(CatalogName name, SortValue sortValue) {
-        this.id = IDGeneratorManager.getIdGenerator(CatalogId.class).generate();
+        this.id = IDGeneratorHolder.getIdGenerator(CatalogId.class).generate();
         this.name = name;
         this.sortValue = sortValue;
         this.isRoot = false;

@@ -1,6 +1,6 @@
 package cn.qingyumao.scaffold.execute;
 
-import cn.qingyumao.scaffold.execution.CmdDispatcher;
+import cn.qingyumao.scaffold.ddd.execution.CmdDispatcher;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

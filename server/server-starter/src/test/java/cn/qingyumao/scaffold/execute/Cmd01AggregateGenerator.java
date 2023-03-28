@@ -1,8 +1,7 @@
 package cn.qingyumao.scaffold.execute;
 
-import cn.qingyumao.scaffold.domain.EntitySource;
-import cn.qingyumao.scaffold.execution.AggregateGenerator;
-import cn.qingyumao.scaffold.execution.annation.Command;
+import cn.qingyumao.scaffold.ddd.domain.EntitySource;
+import cn.qingyumao.scaffold.ddd.execution.AggregateGenerator;
 import org.springframework.stereotype.Component;
 
 @Component

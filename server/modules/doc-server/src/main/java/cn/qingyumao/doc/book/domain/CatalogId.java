@@ -1,9 +1,10 @@
 package cn.qingyumao.doc.book.domain;
 
-import cn.qingyumao.scaffold.domain.Id;
 import lombok.Getter;
 
-public class CatalogId implements Id {
+import java.io.Serializable;
+
+public class CatalogId implements Serializable {
     @Getter
     private final Long val;
 

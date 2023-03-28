@@ -1,12 +1,15 @@
 package cn.qingyumao.scaffold.web;
 
-import cn.qingyumao.scaffold.execution.CmdDispatcher;
+import cn.qingyumao.scaffold.ddd.execution.CmdDispatcher;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.SmartInitializingSingleton;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.util.Assert;
 
+/**
+ * 通用
+ */
 public class CommonController implements SmartInitializingSingleton, BeanFactoryPostProcessor {
 
     private ConfigurableListableBeanFactory beanFactory;

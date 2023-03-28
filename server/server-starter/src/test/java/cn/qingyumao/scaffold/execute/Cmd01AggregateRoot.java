@@ -1,7 +1,7 @@
 package cn.qingyumao.scaffold.execute;
 
-import cn.qingyumao.scaffold.domain.AggregateRoot;
-import cn.qingyumao.scaffold.domain.EntitySource;
+import cn.qingyumao.scaffold.ddd.domain.AggregateRoot;
+import cn.qingyumao.scaffold.ddd.domain.EntitySource;
 
 public class Cmd01AggregateRoot extends AggregateRoot<Cmd01AggregateId> {
 

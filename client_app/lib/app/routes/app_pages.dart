@@ -12,7 +12,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.BOOK_CATALOG;
+  static const INITIAL = Routes.HOME;
 
   static final routes = [
     GetPage(

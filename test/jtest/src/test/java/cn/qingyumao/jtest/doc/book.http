@@ -1,0 +1,16 @@
+# 创建知识库
+POST {{baseurl}}/doc/book/create
+Content-Type: application/json
+
+{
+  "name": "content"
+}
+
+### 修改名称
+PUT {{baseurl}}/doc/book/change_name
+Content-Type: application/json
+
+{
+  "id": 1640599331447455744,
+  "name": "修改43434了"
+}

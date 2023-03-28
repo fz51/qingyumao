@@ -1,15 +1,23 @@
 package cn.qingyumao.doc.book.domain;
 
 import cn.qingyumao.doc.book.client.BookId;
-import cn.qingyumao.scaffold.domain.AggregateRoot;
-import cn.qingyumao.scaffold.domain.EntitySource;
-import cn.qingyumao.scaffold.domain.IDGeneratorManager;
-import cn.qingyumao.scaffold.domain.IdGenerator;
+import cn.qingyumao.scaffold.ddd.annotation.AggregateRootEntity;
+import cn.qingyumao.scaffold.ddd.annotation.BusinessId;
+import cn.qingyumao.scaffold.ddd.annotation.EntityId;
+import cn.qingyumao.scaffold.ddd.domain.IDGeneratorHolder;
+import cn.qingyumao.scaffold.ddd.domain.IdGenerator;
 import lombok.Getter;
 
-public class Book extends AggregateRoot<BookId> {
+@AggregateRootEntity
+public class Book {
 
     @Getter
+    @EntityId
+    private final BookId id;
+
+
+    @Getter
+    @BusinessId
     private BookName name;
 
     /**
@@ -17,15 +25,14 @@ public class Book extends AggregateRoot<BookId> {
      */
     private Catalog catalog;
 
-    public Book(BookId id, EntitySource source) {
-        super(id, source);
+    public Book(BookId id) {
+        this.id = id;
     }
 
     public static Book create(BookName name) {
-        final IdGenerator<BookId> bookIdIdGenerator = IDGeneratorManager.getIdGenerator(BookId.class);
-        assert bookIdIdGenerator != null;
+        final IdGenerator<BookId> bookIdIdGenerator = IDGeneratorHolder.getIdGenerator(BookId.class);
         final BookId bookId = bookIdIdGenerator.generate();
-        final Book book = new Book(bookId, EntitySource.ORIGIN);
+        final Book book = new Book(bookId);
         book.name = name;
         return book;
     }
@@ -40,5 +47,9 @@ public class Book extends AggregateRoot<BookId> {
 
     }
 
+
+    public void changeName(BookName name) {
+        this.name = name;
+    }
 
 }
