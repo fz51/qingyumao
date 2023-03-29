@@ -16,7 +16,12 @@
         <module>doc-server-spring-boot-starter</module>
         <module>im-client</module>
         <module>im-server</module>
-
+        <module>im-server-spring-boot-starter</module>
+        <module>user-client</module>
+        <module>user-server</module>
+        <module>user-server-spring-boot-starter</module>
+        <module>space-client</module>
+        <module>space-server</module>
 
     </modules>
     <packaging>pom</packaging>

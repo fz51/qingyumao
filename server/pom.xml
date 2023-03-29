@@ -13,6 +13,7 @@
         <module>server-library</module>
         <module>modules</module>
         <module>scaffold</module>
+        <module>modules/space-server-spring-boot-starter</module>
 
     </modules>
     <packaging>pom</packaging>

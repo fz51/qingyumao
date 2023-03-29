@@ -12,7 +12,7 @@
     <modules>
         <module>user-adapter</module>
         <module>user-app</module>
-        <module>user-client</module>
+        <module>user-client1</module>
         <module>user-domain</module>
         <module>user-infrastructure</module>
         <module>user-spring-boot-starter</module>

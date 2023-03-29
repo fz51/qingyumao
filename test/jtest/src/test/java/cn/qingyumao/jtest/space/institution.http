@@ -1,0 +1,8 @@
+# 创建知识库
+POST {{baseurl}}/space/institution/create
+Content-Type: application/json
+
+{
+  "name": "轻羽毛",
+  "spaceCode": "qingyumao"
+}
