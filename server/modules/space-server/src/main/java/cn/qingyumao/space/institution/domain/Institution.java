@@ -20,27 +20,26 @@ public class Institution {
     @Getter
     private final InstitutionId id;
 
-
+    @Getter
     private InstitutionName name;
-
+    @Getter
     private InstitutionAvatar avatar;
 
     @BusinessId
-    private InstitutionSpace space;
+    @Getter
+    private InstitutionCode code;
 
 
     public Institution(InstitutionId id) {
         this.id = id;
     }
 
-    public static Institution create(InstitutionSpace space, InstitutionName name) {
+    public static Institution create(InstitutionCode code, InstitutionName name) {
         final IdGenerator<InstitutionId> idGenerator = IDGeneratorHolder.getIdGenerator(InstitutionId.class);
         final Institution institution = new Institution(idGenerator.generate());
-        institution.space = space;
+        institution.code = code;
         institution.name = name;
         return institution;
     }
-
-
 
 }

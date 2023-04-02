@@ -5,7 +5,7 @@ import cn.qingyumao.scaffold.ddd.execution.CmdResult;
 import cn.qingyumao.space.institution.InstitutionId;
 import cn.qingyumao.space.institution.domain.Institution;
 import cn.qingyumao.space.institution.domain.InstitutionName;
-import cn.qingyumao.space.institution.domain.InstitutionSpace;
+import cn.qingyumao.space.institution.domain.InstitutionCode;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,11 +13,11 @@ import lombok.Setter;
 public class CreateInstitutionCmd implements CmdResult<InstitutionId> {
 
     @Getter
-    private final InstitutionSpace space;
+    private final InstitutionCode space;
     @Getter
     private final InstitutionName name;
 
-    public CreateInstitutionCmd(InstitutionSpace space, InstitutionName name) {
+    public CreateInstitutionCmd(InstitutionCode space, InstitutionName name) {
         this.space = space;
         this.name = name;
     }

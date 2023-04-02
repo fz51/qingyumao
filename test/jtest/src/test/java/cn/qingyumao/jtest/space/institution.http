@@ -4,5 +4,8 @@ Content-Type: application/json
 
 {
   "name": "轻羽毛",
-  "spaceCode": "qingyumao"
+  "code": "qingyumao"
 }
+
+###
+GET {{baseurl}}/space/institution/admin_page?page=0&size=10

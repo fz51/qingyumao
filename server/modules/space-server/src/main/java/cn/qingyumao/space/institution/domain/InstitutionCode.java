@@ -4,15 +4,15 @@ import lombok.Getter;
 import org.javers.core.metamodel.annotation.ValueObject;
 
 @ValueObject
-public class InstitutionSpace {
+public class InstitutionCode {
     /**
      * 唯一编码
      */
     @Getter
-    private final String code;
+    private final String val;
 
 
-    public InstitutionSpace(String code) {
-        this.code = code;
+    public InstitutionCode(String code) {
+        this.val = code;
     }
 }
